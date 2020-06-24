@@ -33,17 +33,16 @@ def findSum():
     j = 0
     while(i < len(pyramid)):
         if(findPrime(pyramid[i][j]) & findPrime(pyramid[i][j+1])):
-            if(findPrime(pyramid[i][j-1]) == False):
-                sum = sum - pyramid[i-1][j] + pyramid[i-1][j-1]
-                sum += pyramid[i][j-1]
+            print("Both of them are prime!!")
+            return sum
         else:
             if ( (pyramid[i][j] > pyramid[i][j+1]) & (findPrime(pyramid[i][j]) == False) ):
                 sum += pyramid[i][j]
-                #print("Sum:", sum, "- the number:", pyramid[i][j])
+                print("Sum1:", sum, "- the number:", pyramid[i][j])
                 j = j
             else:
                 sum += pyramid[i][j+1]
-                #print("Sum:", sum, "- the number:", pyramid[i][j+1])
+                print("Sum2:", sum, "- the number:", pyramid[i][j+1])
                 j = j+1
         i = i+1
 
